@@ -126,11 +126,11 @@ if __name__ == '__main__':
     NUM_TOYS = 2000000
     NUM_ELVES = 1325
 
-    toy_file = os.path.join(os.getcwd(), 'toys_2MM_v10.csv')
+    toy_file = os.path.join(os.getcwd(), 'toys.csv')
     myToys = read_toys(toy_file, NUM_TOYS)
     print ' -- All toys read. Starting to score submission. '
 
-    sub_file = os.path.join(os.getcwd(), 'soln_toys_2MM_v10.csv')
+    sub_file = os.path.join(os.getcwd(), 'sampleSubmission.csv')
     hrs = Hours()
     score_submission(sub_file, myToys, hrs, NUM_ELVES)
 
