@@ -8,8 +8,6 @@ class Toy:
         self.id = toyid
         self.arrival_minute = Hours.convert_to_minute(arrival)
         self.duration = int(duration)
-        self.rating_increase = 1.0275
-        self.rating_decrease = 0.95
         self.completed_minute = 0
         self.work_window_days = 25
 
