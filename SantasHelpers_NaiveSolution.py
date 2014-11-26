@@ -105,7 +105,7 @@ if __name__ == '__main__':
 
     start = time.time()
 
-    NUM_ELVES = 1325
+    NUM_ELVES = 900
 
     toy_file = os.path.join(os.getcwd(), 'toys.csv')
     soln_file = os.path.join(os.getcwd(), 'sampleSubmission.csv')
