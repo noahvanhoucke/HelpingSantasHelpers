@@ -109,9 +109,9 @@ def score_submission(sub_file, myToys, hrs, NUM_ELVES):
         print "\n   max(complete_toys) = {0} versus NUM_TOYS = {1}".format(max(complete_toys), NUM_TOYS)
         exit(-1)
     else:
+        score = last_minute * math.log(1.0 + len(myElves))
         print '\nSuccess!'
-        print '  Last toy done at {0} = {1}'.\
-            format(last_minute, hrs.reference_start_time + datetime.timedelta(seconds=60*last_minute))
+        print '  Score = {0}'.format(score)
 
 
 # ======================================================================= #
