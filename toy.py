@@ -9,7 +9,6 @@ class Toy:
         self.arrival_minute = Hours.convert_to_minute(arrival)
         self.duration = int(duration)
         self.completed_minute = 0
-        self.work_window_days = 25
 
     def outside_toy_start_period(self, start_minute):
         """ Checks that work on toy does not start outside of the allowed starting period.
@@ -17,10 +16,7 @@ class Toy:
         :param start_minute: minute the work is scheduled to start
         :return: True of outside of allowed starting period, False otherwise
         """
-        if self.arrival_minute <= start_minute < self.arrival_minute + (self.work_window_days * 24 * 60):
-            return False
-        else:
-            return True
+        return start_minute < self.arrival_minute
 
     def is_complete(self, start_minute, elf_duration, rating):
         """ Determines if the toy is completed given duration of work and elf's productivity rating
