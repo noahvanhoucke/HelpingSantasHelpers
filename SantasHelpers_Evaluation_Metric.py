@@ -81,9 +81,8 @@ def score_submission(sub_file, myToys, hrs, NUM_ELVES):
             # 1. within correct window of toy's arrival
             # 2. when elf is next allowed to work
             if myToys[current_toy].outside_toy_start_period(start_minute):
-                print '\n ** Requesting work on Toy {0} at minute {1}: Work must start between [{2}, {3}] minutes'. \
-                    format(current_toy, start_minute, myToys[current_toy].arrival_minute,
-                           myToys[current_toy].arrival_minute + (24 * myToys[current_toy].work_window_days * 60))
+                print '\n ** Requesting work on Toy {0} at minute {1}: Work can start at {2} minutes'. \
+                    format(current_toy, start_minute, myToys[current_toy].arrival_minute))
                 exit(-1)
             if start_minute < myElves[current_elf].next_available_time:
                 print '\n ** Elf {2} needs his rest, he is not available now ({0}) but will be later at {1}'. \
