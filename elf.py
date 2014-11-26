@@ -8,8 +8,8 @@ class Elf:
         self.id = elfid
         self.rating = 1.0
         self.next_available_time = 540  # Santa's Workshop opens Jan 1, 2014 9:00 (= 540 minutes)
-        self.rating_increase = 1.0275
-        self.rating_decrease = 0.95
+        self.rating_increase = 1.02
+        self.rating_decrease = 0.90
 
     def update_elf(self, hrs, toy, start_minute, duration):
         """ Updates the elf's productivity rating and next available time based on last toy completed.
@@ -55,6 +55,6 @@ class Elf:
         """
         # number of required minutes to build toy worked by elf, broken up by sanctioned and unsanctioned minutes
         sanctioned, unsanctioned = hrs.get_sanctioned_breakdown(start_minute, toy_required_minutes)
-        self.rating = max(0.5,
-                          min(2.0, self.rating * (self.rating_increase ** (sanctioned/60.0)) *
+        self.rating = max(0.25,
+                          min(4.0, self.rating * (self.rating_increase ** (sanctioned/60.0)) *
                               (self.rating_decrease ** (unsanctioned/60.0))))
