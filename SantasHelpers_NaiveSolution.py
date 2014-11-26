@@ -77,12 +77,10 @@ def solution_firstAvailableElf(toy_file, soln_file, myelves):
                 if current_toy.arrival_minute > elf_available_time:
                     work_start_time = current_toy.arrival_minute
 
-                # work_start_time within toy.work_window_days of toy's arrival
-                if work_start_time > ((24*60*current_toy.work_window_days) + current_toy.arrival_minute):
-                    print '\nWork is starting too late on Toy {3}! {0}: [{1}, {2}]'.\
-                        format(work_start_time, current_toy.arrival_minute,
-                               (24*60*current_toy.work_window_days) + current_toy.arrival_minute,
-                               current_toy.id)
+                # work_start_time cannot be before toy's arrival
+                if work_start_time < current_toy.arrival_minute:
+                    print 'Work_start_time before arrival minute: {0}, {1}'.\
+                        format(work_start_time, current_toy.arrival_minute)
                     exit(-1)
 
                 current_elf.next_available_time, work_duration = \
