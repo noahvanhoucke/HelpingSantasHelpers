@@ -58,7 +58,7 @@ def score_submission(sub_file, myToys, hrs, NUM_ELVES):
             if row_count % 50000 == 0:
                 print 'Starting toy: {0}'.format(row_count)
 
-            current_toy = row[0]  # add check against .completed_member
+            current_toy = row[0] 
             current_elf = int(row[1])
             start_minute = hrs.convert_to_minute(row[2])
             duration = int(row[3])
