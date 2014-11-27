@@ -5,6 +5,7 @@ __date__ = 'November 24, 2014'
 import os
 import csv
 import time
+import math
 import datetime
 
 from hours import Hours
@@ -82,7 +83,7 @@ def score_submission(sub_file, myToys, hrs, NUM_ELVES):
             # 2. when elf is next allowed to work
             if myToys[current_toy].outside_toy_start_period(start_minute):
                 print '\n ** Requesting work on Toy {0} at minute {1}: Work can start at {2} minutes'. \
-                    format(current_toy, start_minute, myToys[current_toy].arrival_minute))
+                    format(current_toy, start_minute, myToys[current_toy].arrival_minute)
                 exit(-1)
             if start_minute < myElves[current_elf].next_available_time:
                 print '\n ** Elf {2} needs his rest, he is not available now ({0}) but will be later at {1}'. \
