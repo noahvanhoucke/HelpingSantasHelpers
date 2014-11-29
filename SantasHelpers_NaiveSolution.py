@@ -105,8 +105,8 @@ if __name__ == '__main__':
 
     NUM_ELVES = 900
 
-    toy_file = os.path.join(os.getcwd(), 'toys_rev1.csv')
-    soln_file = os.path.join(os.getcwd(), 'sampleSubmission_rev1.csv')
+    toy_file = os.path.join(os.getcwd(), 'toys_rev2.csv')
+    soln_file = os.path.join(os.getcwd(), 'sampleSubmission_rev2.csv')
 
     myelves = create_elves(NUM_ELVES)
     solution_firstAvailableElf(toy_file, soln_file, myelves)
