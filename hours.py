@@ -68,7 +68,8 @@ class Hours:
         morning at 9:00 am as the next available minute.
         :param start: minute the REST period starts
         :param num_unsanctioned: always > 0 number of unsanctioned minutes that need resting minutes
-        :return: next available minute after rest period has been applied
+        :return: next available minute after rest period has been applied. If rest period ends with the working day
+                 returns the next morning at 9:00 am
         """
         num_days_since_jan1 = start / self.minutes_in_24h
         rest_time = num_unsanctioned
