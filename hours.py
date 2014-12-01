@@ -62,7 +62,10 @@ class Hours:
 
     def apply_resting_period(self, start, num_unsanctioned):
         """ Enforces the rest period and returns the minute when the elf is next available for work.
-        Rest period is only applied to sanctioned work hours.
+        Rest period is applied during sanctioned hours, so 5 hours rest period requires 5 hours sanctioned.
+        As a result, rest periods will end during the middle of sanctioned hours or at exactly the end of 
+        sanctioned hours. If the rest period ends exactly when the rest period ends, this returns the next 
+        morning at 9:00 am as the next available minute.
         :param start: minute the REST period starts
         :param num_unsanctioned: always > 0 number of unsanctioned minutes that need resting minutes
         :return: next available minute after rest period has been applied
